@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/index')
+@app.route('/')
 def route_list():
     return render_template('layout.html')
 
