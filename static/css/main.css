@@ -1,6 +1,11 @@
-/*body {*/
-/*  background-image: url(/static/image/background.jpg);*/
-/*  background-repeat: no-repeat;*/
-/*  background-attachment: fixed;*/
-/*  background-size: 100% 100%;*/
-/*}*/
+body {
+  background-image: url(/static/image/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+h5 {
+    color: white;
+    text-align: center;
+}
