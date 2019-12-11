@@ -28,7 +28,6 @@ function getWallAndField() {
             if (game[i].includes(j)) {
                 document.querySelector('#row' + i).children[j].classList.add('cell-wall');
             } else {
-                console.log("i: " + i + "j: " + j + "boolean: " + game[i].includes(j));
                 document.querySelector('#row' + i).children[j].classList.add('cell');
             }
         }
@@ -36,12 +35,19 @@ function getWallAndField() {
 }
 
 function setElementsOnField() {
-
+    let player = [[], [], [], [], [], [], [], [], [], [0]];
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            if (player[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('cell-player');
+            }
+        }
+    }
 }
-
 
 function main() {
     setGameField();
+    setElementsOnField();
     getWallAndField();
 }
 

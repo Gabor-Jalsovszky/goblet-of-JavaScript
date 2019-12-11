@@ -48,6 +48,17 @@ h5 {
     width: 50px;
 }
 
+.cell-player {
+    background-image: url(/static/image/harrypotter.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
 .cell-wall {
     background-color: black;
     background-size: contain;
@@ -83,11 +94,6 @@ h5 {
 }
 
 #goblet {
-    height: 45px;
-    width: 45px;
-}
-
-#character {
     height: 45px;
     width: 45px;
 }
