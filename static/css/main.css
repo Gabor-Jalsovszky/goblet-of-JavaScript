@@ -59,6 +59,58 @@ h5 {
     width: 50px;
 }
 
+.fire {
+    background-image: url(/static/image/fire.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.water {
+    background-image: url(/static/image/water.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+.bomb {
+    background-image: url(/static/image/bomb.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.door {
+    background-image: url(/static/image/lock.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.key {
+    background-image: url(/static/image/key.jpg);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
 .cell-wall {
     background-color: black;
     background-size: contain;

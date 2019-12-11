@@ -43,6 +43,47 @@ function setElementsOnField() {
             }
         }
     }
+    let fire = [[], [], [], [1], [], [], [], [6], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (fire[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('fire');
+            }
+        }
+    }
+    let water = [[], [], [], [], [], [], [1], [], [1], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (water[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('water');
+            }
+        }
+    }
+    let bomb = [[], [], [], [], [3], [], [], [], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (bomb[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('bomb');
+            }
+        }
+    }
+    let door = [[], [6], [], [], [], [], [], [], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (door[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('door');
+            }
+        }
+    }
+    let key = [[], [], [], [], [], [10], [], [], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (key[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('key');
+            }
+        }
+    }
+
 }
 
 
