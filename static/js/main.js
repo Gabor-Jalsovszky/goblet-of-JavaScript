@@ -45,10 +45,47 @@ function setElementsOnField() {
     }
 }
 
+
+function movePlayer() {
+    document.addEventListener('keydown', function (event){
+        let player = document.querySelector('.cell-player')
+        let nextCell;
+        let rowId;
+        switch (event.key) {
+            case 'ArrowLeft':
+                nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) - 1];
+                player.classList.remove('cell-player');
+                nextCell.classList.add('cell-player')
+                break;
+            case 'ArrowRight':
+                nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) + 1];
+                player.classList.remove('cell-player');
+                nextCell.classList.add('cell-player')
+                break;
+            case 'ArrowUp':
+                rowId = player.parentElement.getAttribute('id');
+                rowId = parseInt(rowId.charAt(3)) - 1
+                player.classList.remove('cell-player');
+                nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
+                nextCell.classList.add('cell-player');
+                break;
+            case 'ArrowDown':
+                rowId = player.parentElement.getAttribute('id');
+                rowId = parseInt(rowId.charAt(3)) + 1
+                player.classList.remove('cell-player');
+                nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
+                nextCell.classList.add('cell-player');
+                break;
+        }
+        })
+    }
+
+
 function main() {
     setGameField();
     setElementsOnField();
     getWallAndField();
+    movePlayer();
 }
 
 main()
