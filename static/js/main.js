@@ -9,10 +9,10 @@ function getDirections() {
 
 function setGameField() {
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
         let row = document.createElement('tr');
         row.setAttribute('id', 'row' + i.toString());
-        for (let j = 0; j < 10; j++) {
+        for (let j = 0; j < 12; j++) {
             let cell = document.createElement('td');
             cell.setAttribute('id', j.toString());
             row.appendChild(cell);
@@ -22,9 +22,9 @@ function setGameField() {
 }
 
 function getWallAndField() {
-    let game = [[7], [5,7], [1,2,3,4,5,7,8,9], [3], [0,1,2,3,5,6,7,8], [], [0,1,2,3,4,6,7,8,9], [], [0,1,2,3,4,5,6,7,8], []];
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
+    let game = [[0,1,2,3,4,5,6,7,8,9,10,11], [0,8,11], [0,6,8,11], [0,2,3,4,5,6,8,9,10,11], [0,4,11], [0,1,2,3,4,6,7,8,9,11], [0,11], [0,1,2,3,4,5,7,8,9,10,11], [0,11], [0,1,2,3,4,5,6,7,8,9,11], [0,11], [0,1,2,3,4,5,6,7,8,9,10,11]];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
             if (game[i].includes(j)) {
                 document.querySelector('#row' + i).children[j].classList.add('cell-wall');
             } else {
