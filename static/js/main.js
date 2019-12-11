@@ -64,14 +64,14 @@ function movePlayer() {
                 break;
             case 'ArrowUp':
                 rowId = player.parentElement.getAttribute('id');
-                rowId = parseInt(rowId.charAt(3)) - 1
+                rowId = parseInt(rowId.slice(3)) - 1
                 player.classList.remove('cell-player');
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
                 nextCell.classList.add('cell-player');
                 break;
             case 'ArrowDown':
                 rowId = player.parentElement.getAttribute('id');
-                rowId = parseInt(rowId.charAt(3)) + 1
+                rowId = parseInt(rowId.slice(3)) + 1
                 player.classList.remove('cell-player');
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
                 nextCell.classList.add('cell-player');
