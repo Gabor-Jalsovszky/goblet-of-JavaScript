@@ -26,13 +26,13 @@ function getWallandField() {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             if (game[i].includes(j)) {
-                document.querySelector('#row' + i).children[j].setAttribute('class', 'cell-wall');
+
+                document.querySelector('#row' + i).children[j].classList.add('cell-wall');
             } else {
-                document.querySelector('#row' + 1).children[j].setAttribute('class', 'cell');
+                console.log("i: " + i + "j: " + j + "boolean: " + game[i].includes(j));
+                document.querySelector('#row' + i).children[j].classList.add('cell');
             }
         }
-
-
     }
 }
 
