@@ -91,7 +91,7 @@ function setElementsOnField() {
             }
         }
     }
-    let enemy = [[], [], [2], [], [], [], [], [], [], [], [], []];
+    let enemy = [[], [], [5], [], [], [], [], [], [], [], [], []];
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
             if (enemy[i].includes(j)) {
@@ -146,11 +146,27 @@ function movePlayer() {
     }
 
 
+function moveDementor() {
+let dementor = document.querySelector('.enemy');
+let nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) - 1];
+for (let i = 0; i < 4; i++) {
+    dementor.classList.remove('enemy');
+    nextCell.classList.add('enemy');
+    }
+nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
+for (let i = 0; i < 4; i++) {
+    dementor.classList.remove('enemy');
+    nextCell.classList.add('enemy');
+    }
+}
+
+
 function main() {
     setGameField();
     setElementsOnField();
     getWallAndField();
     movePlayer();
+    setInterval(moveDementor, 300);
 }
 
 main()
