@@ -1,10 +1,6 @@
-function getDirections() {
-    return [
-        {x: 1, y: 0}, // horizontal
-        {x: 0, y: 1}, // vertical
-        {x: 1, y: 1}, // diagonal 1
-        {x: 1, y: -1}, // diagonal 2
-    ]
+function setInventory() {
+    let row = document.createElement('tr');
+
 }
 
 function setGameField() {
@@ -22,7 +18,7 @@ function setGameField() {
 }
 
 function getWallAndField() {
-    let game = [[0,1,2,3,4,5,6,7,8,9,10,11], [0,8,11], [0,6,8,11], [0,2,3,4,5,6,8,9,10,11], [0,4,11], [0,1,2,3,4,6,7,8,9,11], [0,11], [0,1,2,3,4,5,7,8,9,10,11], [0,11], [0,1,2,3,4,5,6,7,8,9,11], [0,11], [0,1,2,3,4,5,6,7,8,9,10,11]];
+    let game = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [0, 8, 11], [0, 6, 8, 11], [0, 2, 3, 4, 5, 6, 8, 9, 10, 11], [0, 4, 11], [0, 1, 2, 3, 4, 6, 7, 8, 9, 11], [0, 11], [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11], [0, 11], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11], [0, 11], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]];
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
             if (game[i].includes(j)) {
@@ -104,8 +100,8 @@ function setElementsOnField() {
 
 
 function movePlayer() {
-    document.addEventListener('keydown', function (event){
-        let player = document.querySelector('.cell-player')
+    document.addEventListener('keydown', function (event) {
+        let player = document.querySelector('.cell-player');
         let nextCell;
         let rowId;
         switch (event.key) {
@@ -134,7 +130,7 @@ function movePlayer() {
                 break;
             case 'ArrowDown':
                 rowId = player.parentElement.getAttribute('id');
-                rowId = parseInt(rowId.slice(3)) + 1
+                rowId = parseInt(rowId.slice(3)) + 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
                 if (nextCell.className !== 'cell-wall') {
                     player.classList.remove('cell-player');
@@ -142,21 +138,21 @@ function movePlayer() {
                 }
                 break;
         }
-        })
-    }
+    })
+}
 
 
 function moveDementor() {
-let dementor = document.querySelector('.enemy');
-let nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) - 1];
-for (let i = 0; i < 4; i++) {
-    dementor.classList.remove('enemy');
-    nextCell.classList.add('enemy');
+    let dementor = document.querySelector('.enemy');
+    let nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) - 1];
+    for (let i = 0; i < 4; i++) {
+        dementor.classList.remove('enemy');
+        nextCell.classList.add('enemy');
     }
-nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
-for (let i = 0; i < 4; i++) {
-    dementor.classList.remove('enemy');
-    nextCell.classList.add('enemy');
+    nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
+    for (let i = 0; i > 4; i++) {
+        dementor.classList.remove('enemy');
+        nextCell.classList.add('enemy');
     }
 }
 
@@ -169,4 +165,4 @@ function main() {
     setInterval(moveDementor, 300);
 }
 
-main()
+main();
