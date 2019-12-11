@@ -54,27 +54,35 @@ function movePlayer() {
         switch (event.key) {
             case 'ArrowLeft':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) - 1];
-                player.classList.remove('cell-player');
-                nextCell.classList.add('cell-player')
+                if (nextCell.className !== 'cell-wall') {
+                    player.classList.remove('cell-player');
+                    nextCell.classList.add('cell-player');
+                }
                 break;
             case 'ArrowRight':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) + 1];
-                player.classList.remove('cell-player');
-                nextCell.classList.add('cell-player')
+                if (nextCell.className !== 'cell-wall') {
+                    player.classList.remove('cell-player');
+                    nextCell.classList.add('cell-player');
+                }
                 break;
             case 'ArrowUp':
                 rowId = player.parentElement.getAttribute('id');
-                rowId = parseInt(rowId.slice(3)) - 1
-                player.classList.remove('cell-player');
+                rowId = parseInt(rowId.slice(3)) - 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                nextCell.classList.add('cell-player');
+                if (nextCell.className !== 'cell-wall') {
+                    player.classList.remove('cell-player');
+                    nextCell.classList.add('cell-player');
+                }
                 break;
             case 'ArrowDown':
                 rowId = player.parentElement.getAttribute('id');
                 rowId = parseInt(rowId.slice(3)) + 1
-                player.classList.remove('cell-player');
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                nextCell.classList.add('cell-player');
+                if (nextCell.className !== 'cell-wall') {
+                    player.classList.remove('cell-player');
+                    nextCell.classList.add('cell-player');
+                }
                 break;
         }
         })
