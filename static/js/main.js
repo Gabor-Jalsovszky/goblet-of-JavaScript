@@ -35,9 +35,9 @@ function getWallAndField() {
 }
 
 function setElementsOnField() {
-    let player = [[], [], [], [], [], [], [], [], [], [0]];
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
+    let player = [[], [], [], [], [], [], [], [], [], [], [1], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
             if (player[i].includes(j)) {
                 document.querySelector('#row' + i).children[j].classList.add('cell-player');
             }
