@@ -110,6 +110,26 @@ h5 {
     height: 50px;
     width: 50px;
 }
+.goblet {
+    background-image: url(/static/image/goblet-field.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.enemy {
+    background-image: url(/static/image/dementor.png);
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
 
 .cell-wall {
     background-color: black;

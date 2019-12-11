@@ -83,6 +83,22 @@ function setElementsOnField() {
             }
         }
     }
+    let goblet = [[], [10], [], [], [], [], [], [], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (goblet[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('goblet');
+            }
+        }
+    }
+    let enemy = [[], [], [2], [], [], [], [], [], [], [], [], []];
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            if (enemy[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].classList.add('enemy');
+            }
+        }
+    }
 
 }
 
