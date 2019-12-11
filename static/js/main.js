@@ -22,14 +22,20 @@ function setGameField() {
 }
 
 function getWallandField() {
-    let game = [[0, 2, 5],[],[],[],[],[3,8,9],[],[],[],[]];
+    let game = [[0, 2, 5], [], [], [], [], [3, 8, 9], [], [], [], []];
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
-            if (game[i].includes(j) ? document.querySelector('#row' + i).children[j].setAttribute('class', 'cell-wall') :
+            if (game[i].includes(j)) {
+                document.querySelector('#row' + i).children[j].setAttribute('class', 'cell-wall');
+            } else {
                 document.querySelector('#row' + 1).children[j].setAttribute('class', 'cell');
+            }
         }
+
+
     }
 }
+
 
 function main() {
     setGameField();
