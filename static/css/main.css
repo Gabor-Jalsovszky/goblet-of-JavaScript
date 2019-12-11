@@ -8,4 +8,20 @@ body {
 h5 {
     color: white;
     text-align: center;
+    font-family: "DejaVu Sans";
+    font-size: 35px;
+}
+
+.cell {
+  background-color: black;
+  background-size: contain;
+  border: 1px solid white;
+  box-sizing: border-box;
+  float: left;
+  height: 30px;
+  width: 30px;
+}
+
+.game-field {
+    align-content: center;
 }
