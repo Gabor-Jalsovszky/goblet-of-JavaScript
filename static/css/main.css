@@ -1,27 +1,98 @@
 body {
-  background-image: url(/static/image/background.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+    background-image: url(/static/image/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 h5 {
     color: white;
     text-align: center;
     font-family: "DejaVu Sans";
-    font-size: 35px;
-}
-
-.cell {
-  background-color: black;
-  background-size: contain;
-  border: 1px solid white;
-  box-sizing: border-box;
-  float: left;
-  height: 30px;
-  width: 30px;
+    font-size: 30px;
 }
 
 .game-field {
-    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instruction {
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 500px;
+    width: 270px;
+    word-break: break-word;
+    float: left;
+    text-align: left;
+}
+
+.inventory {
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 200px;
+    width: 270px;
+    word-break: break-word;
+    float: right;
+}
+
+.cell {
+    background-color: white;
+    background-size: contain;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+.cell-wall {
+    background-color: black;
+    background-size: contain;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+#key {
+    height: 45px;
+    width: 45px;
+}
+
+#door {
+    height: 45px;
+    width: 45px;
+}
+
+#fire {
+    height: 45px;
+    width: 45px;
+}
+
+#water {
+    height: 45px;
+    width: 45px;
+}
+
+#bomb {
+    height: 45px;
+    width: 45px;
+}
+
+#goblet {
+    height: 45px;
+    width: 45px;
+}
+
+#character {
+    height: 45px;
+    width: 45px;
+}
+
+#enemy {
+    height: 45px;
+    width: 45px;
 }
