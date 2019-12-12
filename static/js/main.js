@@ -115,14 +115,16 @@ function movePlayer() {
         switch (event.key) {
             case 'ArrowLeft':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) - 1];
-                if (nextCell.className !== 'cell-wall') {
+                open = checkDoorKey(nextCell)
+                if (nextCell.className !== 'cell-wall' && open == true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
                 break;
             case 'ArrowRight':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) + 1];
-                if (nextCell.className !== 'cell-wall') {
+                open = checkDoorKey(nextCell)
+                if (nextCell.className !== 'cell-wall' && open == true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -131,7 +133,8 @@ function movePlayer() {
                 rowId = player.parentElement.getAttribute('id');
                 rowId = parseInt(rowId.slice(3)) - 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                if (nextCell.className !== 'cell-wall') {
+                open = checkDoorKey(nextCell)
+                if (nextCell.className !== 'cell-wall' && open == true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -140,7 +143,8 @@ function movePlayer() {
                 rowId = player.parentElement.getAttribute('id');
                 rowId = parseInt(rowId.slice(3)) + 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                if (nextCell.className !== 'cell-wall') {
+                open = checkDoorKey(nextCell)
+                if (nextCell.className !== 'cell-wall' && open == true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -193,6 +197,14 @@ function getBomb(player) {
         player.classList.remove('bomb');
         inventory.bomb ++;
     }
+}
+
+
+function checkDoorKey(nextCell) {
+    if (nextCell.classList.contains('door') && inventory.key < 1) {
+            return false;
+        }
+    return true
 }
 
 
