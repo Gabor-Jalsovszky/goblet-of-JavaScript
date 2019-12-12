@@ -110,21 +110,21 @@ function movePlayer() {
         crossFire(player);
         getKey(player);
         getBomb(player);
-        let nextCell;
-        let rowId;
+        crossDoor(player);
+        let nextCell, rowId, open;
         switch (event.key) {
             case 'ArrowLeft':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) - 1];
-                open = checkDoorKey(nextCell)
-                if (nextCell.className !== 'cell-wall' && open == true) {
+                open = checkDoorKey(nextCell);
+                if (nextCell.className !== 'cell-wall' && open === true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
                 break;
             case 'ArrowRight':
                 nextCell = player.parentElement.children[parseInt(player.getAttribute('id')) + 1];
-                open = checkDoorKey(nextCell)
-                if (nextCell.className !== 'cell-wall' && open == true) {
+                open = checkDoorKey(nextCell);
+                if (nextCell.className !== 'cell-wall' && open === true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -133,8 +133,8 @@ function movePlayer() {
                 rowId = player.parentElement.getAttribute('id');
                 rowId = parseInt(rowId.slice(3)) - 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                open = checkDoorKey(nextCell)
-                if (nextCell.className !== 'cell-wall' && open == true) {
+                open = checkDoorKey(nextCell);
+                if (nextCell.className !== 'cell-wall' && open === true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -143,8 +143,8 @@ function movePlayer() {
                 rowId = player.parentElement.getAttribute('id');
                 rowId = parseInt(rowId.slice(3)) + 1;
                 nextCell = player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
-                open = checkDoorKey(nextCell)
-                if (nextCell.className !== 'cell-wall' && open == true) {
+                open = checkDoorKey(nextCell);
+                if (nextCell.className !== 'cell-wall' && open === true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
                 }
@@ -205,6 +205,14 @@ function checkDoorKey(nextCell) {
             return false;
         }
     return true
+}
+
+
+function crossDoor(player) {
+    if (player.classList.contains('door')) {
+        player.classList.remove('door');
+        inventory.key --;
+    }
 }
 
 
