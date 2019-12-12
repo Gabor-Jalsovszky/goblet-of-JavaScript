@@ -147,7 +147,7 @@ function movePlayer() {
                 if (nextCell.className !== 'cell-wall' && open === true) {
                     player.classList.remove('cell-player');
                     nextCell.classList.add('cell-player');
-                }player.parentElement.parentElement.children[rowId].children[player.getAttribute('id')];
+                }
                 break;
             case 'b':
                 if (inventory.bomb > 0) {
@@ -166,6 +166,20 @@ function movePlayer() {
                     inventory.bomb --
                     break;
                 }
+            case 'x':
+                leftCell = player.parentElement.children[parseInt(player.getAttribute('id')) - 1];
+                rightCell = player.parentElement.children[parseInt(player.getAttribute('id')) + 1];
+                upperRowId = player.parentElement.getAttribute('id');
+                upperRowId = parseInt(upperRowId.slice(3)) - 1;
+                upperCell = player.parentElement.parentElement.children[upperRowId].children[player.getAttribute('id')];
+                lowerRowId = player.parentElement.getAttribute('id');
+                lowerRowId = parseInt(lowerRowId.slice(3)) + 1;
+                lowerCell = player.parentElement.parentElement.children[lowerRowId].children[player.getAttribute('id')];
+                leftCell.classList.remove('enemy');
+                rightCell.classList.remove('enemy');
+                upperCell.classList.remove('enemy');
+                lowerCell.classList.remove('enemy');
+                break;
         }
     })
 }
