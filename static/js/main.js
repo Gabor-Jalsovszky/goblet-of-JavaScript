@@ -106,6 +106,9 @@ function setElementsOnField() {
 function movePlayer() {
     document.addEventListener('keydown', function (event) {
         let player = document.querySelector('.cell-player');
+        getWater(player);
+        crossFire(player);
+        getKey(player)
         let nextCell;
         let rowId;
         switch (event.key) {
@@ -156,6 +159,30 @@ function moveDementor() {
         nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
         dementor.classList.remove('enemy');
         nextCell.classList.add('enemy');
+    }
+}
+
+
+function getWater(player) {
+    if (player.classList.contains('water')) {
+        player.classList.remove('water');
+        inventory.water ++;
+    }
+}
+
+
+function crossFire(player) {
+    if (inventory.water > 0 && player.classList.contains('fire')) {
+        player.classList.remove('fire');
+        inventory.water --;
+    }
+}
+
+
+function getKey(player) {
+    if (player.classList.contains('key')) {
+        player.classList.remove('key');
+        inventory.key ++;
     }
 }
 
