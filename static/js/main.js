@@ -1,6 +1,10 @@
-function setInventory() {
-    let row = document.createElement('tr');
+let inventory = {water: 0, key: 0, bomb: 0};
 
+
+function printInventory() {
+    document.getElementById('water').innerHTML = 'Water: ' + inventory.water;
+    document.getElementById('key').innerHTML = 'Key: ' + inventory.key;
+    document.getElementById('bomb').innerHTML = 'Bomb: ' + inventory.bomb
 }
 
 function setGameField() {
@@ -145,12 +149,11 @@ function movePlayer() {
 function moveDementor() {
     let dementor = document.querySelector('.enemy');
     let nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) - 1];
-    for (let i = 0; i < 4; i++) {
+    if (nextCell.className !== 'cell-wall') {
         dementor.classList.remove('enemy');
         nextCell.classList.add('enemy');
-    }
-    nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
-    for (let i = 0; i > 4; i++) {
+    } else {
+        nextCell = dementor.parentElement.children[parseInt(dementor.getAttribute('id')) + 1];
         dementor.classList.remove('enemy');
         nextCell.classList.add('enemy');
     }
@@ -162,7 +165,8 @@ function main() {
     setElementsOnField();
     getWallAndField();
     movePlayer();
-    setInterval(moveDementor, 300);
+    setInterval(moveDementor, 500);
+    setInterval(printInventory, 1000);
 }
 
 main();
