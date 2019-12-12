@@ -108,7 +108,8 @@ function movePlayer() {
         let player = document.querySelector('.cell-player');
         getWater(player);
         crossFire(player);
-        getKey(player)
+        getKey(player);
+        getBomb(player);
         let nextCell;
         let rowId;
         switch (event.key) {
@@ -183,6 +184,14 @@ function getKey(player) {
     if (player.classList.contains('key')) {
         player.classList.remove('key');
         inventory.key ++;
+    }
+}
+
+
+function getBomb(player) {
+    if (player.classList.contains('bomb')) {
+        player.classList.remove('bomb');
+        inventory.bomb ++;
     }
 }
 
